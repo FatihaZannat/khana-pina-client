@@ -10,7 +10,7 @@ useEffect(()=>{
     .then(data => {
         setMenuData(data)})
 },[])
-console.log(menuData);
+// console.log(menuData);
 
  
 const offered = menuData.filter(menu => menu.category === 'offered')
