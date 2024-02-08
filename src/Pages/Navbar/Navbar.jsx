@@ -1,13 +1,26 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import UseAuthContext from "../../hooks/AuthLoad";
 
 const Navbar = () => {
+    const {user, logOut} = UseAuthContext()
+console.log(user);
+    const handleLogOut = () => {
+        logOut()
+        .then()
+        .catch(e => console.log(e))
+    }
     const navItem = < >
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/contact'>Contact Us</NavLink></li>
         <li><NavLink to='/shop'>Our Shop</NavLink></li>
         <li><NavLink to='/menu'>Our Menu</NavLink></li>
         <li><NavLink to='/dashbord'>Dashbord</NavLink></li>
-        <li><NavLink to='/login'>Login</NavLink></li>
+
+        {user ? <>
+            <p>{user?.displayName}</p>
+            <li><Link onClick={handleLogOut} to=''>Logout</Link></li>
+        </> :
+        <li><NavLink to='/login'>Login</NavLink></li>}
         
     </>
     return (
