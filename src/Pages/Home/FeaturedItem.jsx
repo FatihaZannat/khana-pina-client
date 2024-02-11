@@ -23,7 +23,7 @@ const FeaturedItem = () => {
                         item={item}></FoodList>)
                 }
             </section>
-           <Button text='view full menu'></Button>
+           <Button item='' text='view full menu'></Button>
 
            <div className="bg-black text-white py-16 text-center text-4xl">Call Us: +12<sub className="text-4xl">8</sub>03480<sub className="text-4xl">9</sub>348</div>
         </div>

@@ -12,11 +12,12 @@ import { Helmet } from "react-helmet";
 
 const OurShop = () => {
     const [offered,salad,pizza,soups,desserts,drinks] = MenuData()
-    const category = ['salad' , 'pizza' , 'soup' , 'dessert' , 'drinks']
+    const category = ['offered','salad' , 'pizza' , 'soup' , 'dessert' , 'drinks']
     const {name} = useParams()
    let indexOfName = category.indexOf(name)
 //    const indexOfName = category.findIndex(name)
-    const [tabIndex, setTabIndex] = useState(indexOfName = 0)
+    const [tabIndex, setTabIndex] = useState(indexOfName)
+  
     // console.log(indexOfName , name);
 
     return (
@@ -27,6 +28,7 @@ const OurShop = () => {
             <Cover img={shopImg} name='our shop'></Cover>
             <Tabs selectedIndex={tabIndex} onSelect={(index)=>setTabIndex(index)} >
                 <TabList>
+                    <Tab>offered</Tab>
                     <Tab>salad</Tab>
                     <Tab>Pizza</Tab>
                     <Tab>Soups</Tab>
@@ -35,6 +37,9 @@ const OurShop = () => {
 
                 </TabList>
 
+                <TabPanel>
+               <ShopDetails items={offered}></ShopDetails>
+                </TabPanel>
                 <TabPanel>
                <ShopDetails items={salad}></ShopDetails>
                 </TabPanel>

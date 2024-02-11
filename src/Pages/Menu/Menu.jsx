@@ -7,9 +7,6 @@ import pizaImg from "../../assets/menu/pizza-bg.jpg"
 import saladImg from "../../assets/menu/salad-bg.jpg"
 import soupImg from "../../assets/menu/soup-bg.jpg"
 import { MenuData } from "../../hooks/DataLoad";
-import FoodList from "../Sheard/FoodList";
-import Button from "../../Component/Button";
-import { Link } from "react-router-dom";
 import MenuDetails from "./MenuDetails";
 
 const Menu = () => {
@@ -23,7 +20,7 @@ const Menu = () => {
             {/* offered */}
             <Cover img={menuImg} name='OFFER'></Cover>
             <HeaderName subHeader="don't miss" header="today's offer"></HeaderName>
-            <MenuDetails   items={offered} ></MenuDetails>
+            <MenuDetails  name='offered' items={offered} ></MenuDetails>
 
             {/* dessert */}
           <MenuDetails img={dessertImg} name='dessert' items={desserts} ></MenuDetails>
