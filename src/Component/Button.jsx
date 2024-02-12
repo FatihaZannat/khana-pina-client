@@ -8,7 +8,7 @@ const Button = ({ text, item }) => {
     
     const[, refecth] = Usecart()
 
-    console.log(item);
+    // console.log(item);
     const { image, name, price, _id } = item
     const axios = Axios()
 

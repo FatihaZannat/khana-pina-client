@@ -4,11 +4,13 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import UseAuthContext from "../../hooks/AuthLoad";
 import Swal from "sweetalert2";
+import AxiosPublic from "../../hooks/AxiosPublic";
 
 
 const SignUp = () => {
     const { createNewUser,updateUser } = UseAuthContext()
     const navigate = useNavigate()
+    const axios = AxiosPublic()
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
     const onSubmit = (data) => {
@@ -20,6 +22,11 @@ const SignUp = () => {
                 updateUser(data.name, data.photo)
                     .then(() => {
                         console.log('update');
+
+                        axios.post('/users',{email:data.email, name:data.name})
+                        .then(res => console.log(res))
+                        .catch(err => console.log(err))
+
                     }).catch((error) => {
                         console.log(error)
                     });

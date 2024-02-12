@@ -9,7 +9,9 @@ import SignUp from "../Pages/SingUp/SignUp";
 import DashBoard from "../Layout/DashBoard";
 import UserHome from "../Pages/DashBoardPages/UserHome";
 import ShopingCart from "../Pages/DashBoardPages/ShopingCart/ShopingCart";
-
+import PrivateRoute from "../Router/PrivateRoute"
+import AllUsers from "../Pages/DashBoardPages/AllUsers";
+import ManageItems from "../Pages/DashBoardPages/ManageItems";
 export const router = createBrowserRouter([
     {
       path: "/",
@@ -44,7 +46,7 @@ export const router = createBrowserRouter([
     },
     {
       path: "/dashbord",
-      element: <DashBoard></DashBoard>,
+      element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
       children:[
         {
         path: '/dashbord/userHome',
@@ -53,6 +55,14 @@ export const router = createBrowserRouter([
         {
           path: '/dashbord/myCart',
           element: <ShopingCart></ShopingCart>
+        },
+        {
+          path: '/dashbord/allUsers',
+          element: <AllUsers></AllUsers>
+        },
+        {
+          path: '/dashbord/manageItems',
+          element: <ManageItems></ManageItems>
         }
     ]
     }

@@ -1,15 +1,38 @@
-import { FaCalculator, FaCalendar, FaFileContract, FaHome, FaShoppingBag, FaShoppingCart, FaTextHeight } from "react-icons/fa";
+import { FaCalculator, FaCalendar, FaFileContract, FaHome, FaShoppingBag, FaShoppingCart, FaTextHeight, FaUser, FaUsers, FaUtensils } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
 import { VscPreview } from "react-icons/vsc";
+import { IoMdMenu } from "react-icons/io";
 import { LiaAddressCard } from "react-icons/lia";
 
 const DashBoard = () => {
+    const isAdmin = true
     return (
-        <div className="flex  mx-auto">
+        <div className="flex  mx-auto max-w-screen-xl">
             <div className="w-64 min-h-dvh bg-orange-500">
    
-                    <ul className="menu   text-xl px-1">
+                  {
+                    isAdmin ? <>
+                       <ul className="menu   text-xl px-1">
+                        <li className="my-2 "><NavLink to='/dashbord/adminHome'> <FaHome></FaHome>
+                            Admin home</NavLink></li>
+                     
+                        <li className="my-2 "><NavLink to='/dashbord/allItems'> <FaUtensils></FaUtensils>
+                            Add items</NavLink></li>
+                     
+                        <li className="my-2 "><NavLink to='/dashbord/manageItems'> <IoMdMenu></IoMdMenu>
+                            Manage Items</NavLink></li>
+                     
+                        <li className="my-2 "><NavLink to='/dashbord/manageBookigs'> <FaShoppingCart></FaShoppingCart>
+                            Manage Bookings</NavLink></li>
+                     
+                        <li className="my-2 "><NavLink to='/dashbord/allUsers'> <FaUsers ></FaUsers>
+                         All Users</NavLink></li>
+                         </ul>
+                    </>
+                    :
+                     <>
+                      <ul className="menu   text-xl px-1">
                         <li className="my-2 "><NavLink to='/dashbord/userHome'> <FaHome></FaHome>
                             User home</NavLink></li>
                      
@@ -28,7 +51,13 @@ const DashBoard = () => {
                      
                         <li className="my-2 "><NavLink to='/dashbord/myBooking'> 
                          <LiaAddressCard></LiaAddressCard>  My Booking</NavLink></li>
+                         </ul>
+                    </> 
+                  }
+
                            <hr />
+
+                           <ul className="menu   text-xl px-1">
                      
                         <li className="my-2 "><NavLink to='/'> <FaHome></FaHome>
                           Home</NavLink></li>

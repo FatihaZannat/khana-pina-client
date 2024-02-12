@@ -15,8 +15,6 @@ const ShopingCart = () => {
                 <div><h1>Total order {cart.length}</h1></div>
                 <div>Total Price $ { cart.reduce((acc,item)=>acc+item.price,0) }</div>
                 <div>Pay</div>
-
-
                 
             </div>
 
