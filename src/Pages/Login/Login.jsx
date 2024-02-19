@@ -19,7 +19,7 @@ const Login = () => {
         reset,
     } = useForm()
     const [disabled, setdisabled] = useState(false)
-console.log(location);
+// console.log(location);
    
 
     const onSubmit = (data) => {

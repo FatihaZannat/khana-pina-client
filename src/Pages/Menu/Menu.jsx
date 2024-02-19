@@ -10,7 +10,7 @@ import { MenuData } from "../../hooks/DataLoad";
 import MenuDetails from "./MenuDetails";
 
 const Menu = () => {
-    const [offered, salad, pizza, soups, desserts, drinks, ] = MenuData()
+    const [,offered, salad, pizza, soups, desserts, drinks, ] = MenuData()
     
     return (
         <div>

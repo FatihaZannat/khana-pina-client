@@ -3,7 +3,6 @@ import pic from '../../assets/others/authentication2.png'
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import UseAuthContext from "../../hooks/AuthLoad";
-import Swal from "sweetalert2";
 import AxiosPublic from "../../hooks/AxiosPublic";
 
 

@@ -6,7 +6,7 @@ import Cover from "../Sheard/Cover";
 import {  MenuData } from "../../hooks/DataLoad";
 import FoodList from "../Sheard/FoodList";
 const FeaturedItem = () => {
-    const [popular] = MenuData()
+    const [,,,,,,,,popular] = MenuData()
 
     return (
         <div>

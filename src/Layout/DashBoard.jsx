@@ -4,9 +4,10 @@ import { IoMenu } from "react-icons/io5";
 import { VscPreview } from "react-icons/vsc";
 import { IoMdMenu } from "react-icons/io";
 import { LiaAddressCard } from "react-icons/lia";
+import UseAdmin from "../hooks/UseAdmin";
 
 const DashBoard = () => {
-    const isAdmin = true
+    const [isAdmin] = UseAdmin()
     return (
         <div className="flex  mx-auto max-w-screen-xl">
             <div className="w-64 min-h-dvh bg-orange-500">
@@ -17,8 +18,8 @@ const DashBoard = () => {
                         <li className="my-2 "><NavLink to='/dashbord/adminHome'> <FaHome></FaHome>
                             Admin home</NavLink></li>
                      
-                        <li className="my-2 "><NavLink to='/dashbord/allItems'> <FaUtensils></FaUtensils>
-                            Add items</NavLink></li>
+                        <li className="my-2 "><NavLink to='/dashbord/AddItem'> <FaUtensils></FaUtensils>
+                            Add item</NavLink></li>
                      
                         <li className="my-2 "><NavLink to='/dashbord/manageItems'> <IoMdMenu></IoMdMenu>
                             Manage Items</NavLink></li>

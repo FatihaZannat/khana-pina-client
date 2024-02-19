@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet";
 
 
 const OurShop = () => {
-    const [offered,salad,pizza,soups,desserts,drinks] = MenuData()
+    const [,,offered,salad,pizza,soups,desserts,drinks] = MenuData()
     const category = ['offered','salad' , 'pizza' , 'soup' , 'dessert' , 'drinks']
     const {name} = useParams()
    let indexOfName = category.indexOf(name)
