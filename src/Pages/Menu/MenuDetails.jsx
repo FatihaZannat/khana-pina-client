@@ -4,7 +4,7 @@ import Button from "../../Component/Button";
 import FoodList from "../Sheard/FoodList";
 
 const MenuDetails = ({img,items,name}) => {
-    console.log(items);
+    // console.log(items);
     return (
         <div>
            {name && img && <Cover img={img} name={name}></Cover> }

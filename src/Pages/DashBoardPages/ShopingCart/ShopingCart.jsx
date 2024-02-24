@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import HeaderName from "../../../Component/HeaderName";
 import Usecart from "../../../hooks/Usecart";
 import CartTable from "./CartTable";
@@ -14,8 +15,11 @@ const ShopingCart = () => {
            <div className="flex mb-10 justify-between uppercase text-4xl">
                 <div><h1>Total order {cart.length}</h1></div>
                 <div>Total Price $ { cart.reduce((acc,item)=>acc+item.price,0) }</div>
-                <div>Pay</div>
+               {
+                cart.length ?  <Link to='/dashbord/payment'><button className="btn btn-outline">Pay</button></Link>
+                :  <button className="btn btn-outline " disabled>Pay</button>
                 
+               }
             </div>
 
             <div className="overflow-x-auto">

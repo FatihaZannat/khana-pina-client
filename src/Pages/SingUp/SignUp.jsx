@@ -20,10 +20,10 @@ const SignUp = () => {
 
                 updateUser(data.name, data.photo)
                     .then(() => {
-                        console.log('update');
+                        // console.log('update');
 
                         axios.post('/users',{email:data.email, name:data.name})
-                        .then(res => console.log(res))
+                        .then( )
                         .catch(err => console.log(err))
 
                     }).catch((error) => {

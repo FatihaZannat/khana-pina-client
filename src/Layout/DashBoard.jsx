@@ -1,13 +1,15 @@
-import { FaCalculator, FaCalendar, FaFileContract, FaHome, FaShoppingBag, FaShoppingCart, FaTextHeight, FaUser, FaUsers, FaUtensils } from "react-icons/fa";
+import { FaCalculator, FaCalendar, FaFileContract, FaHome, FaShoppingBag, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
 import { VscPreview } from "react-icons/vsc";
 import { IoMdMenu } from "react-icons/io";
 import { LiaAddressCard } from "react-icons/lia";
 import UseAdmin from "../hooks/UseAdmin";
+import Usecart from "../hooks/Usecart";
 
 const DashBoard = () => {
     const [isAdmin] = UseAdmin()
+    const [cart] = Usecart()
     return (
         <div className="flex  mx-auto max-w-screen-xl">
             <div className="w-64 min-h-dvh bg-orange-500">
@@ -45,7 +47,7 @@ const DashBoard = () => {
                             Payment History</NavLink></li>
                      
                         <li className="my-2 "><NavLink to='/dashbord/myCart'> <FaShoppingCart></FaShoppingCart>
-                            My Cart</NavLink></li>
+                            My Cart({cart.length})</NavLink></li>
                      
                         <li className="my-2 "><NavLink to='/dashbord/addReview'>
                         <VscPreview></VscPreview>   Add Review</NavLink></li>
@@ -76,7 +78,7 @@ const DashBoard = () => {
                 
 
             </div>
-            <div className="bg-slate-100 flex-1">
+            <div className="bg-slate-100 flex-1 px-12">
                 <Outlet></Outlet>
             </div>
         </div>

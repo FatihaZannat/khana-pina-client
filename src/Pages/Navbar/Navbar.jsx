@@ -2,12 +2,14 @@ import { Link, NavLink } from "react-router-dom";
 import UseAuthContext from "../../hooks/AuthLoad";
 import {  FaShoppingCart } from "react-icons/fa";
 import Usecart from "../../hooks/Usecart";
-import { MenuData } from "../../hooks/DataLoad";
+import UseAdmin from "../../hooks/UseAdmin";
+// import { MenuData } from "../../hooks/DataLoad";
 
 const Navbar = () => {
     
-    const [offered, salad, pizza, soups, desserts, drinks, ] = MenuData()
+    // const [offered, salad, pizza, soups, desserts, drinks, ] = MenuData()
     const [cart] = Usecart()
+    const [isAdmin] = UseAdmin()
     // console.log(cart);
     const { user, logOut } = UseAuthContext()
     // console.log(user);
@@ -21,7 +23,13 @@ const Navbar = () => {
         <li><NavLink to='/contact'>Contact Us</NavLink></li>
         <li><NavLink to={`/shop/salad`}>Our Shop</NavLink></li>
         <li><NavLink to='/menu'>Our Menu</NavLink></li>
-        <li><NavLink to='/dashbord'>Dashbord</NavLink></li>
+      
+       <li>
+       {
+            user ? isAdmin ? <NavLink to='/dashbord/adminHome'>Dashbord</NavLink> : <NavLink to='/dashbord/userHome'>Dashbord</NavLink> : ''
+         }
+       </li>
+        
 
         {user ? <>
 
