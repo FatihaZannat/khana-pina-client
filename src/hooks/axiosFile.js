@@ -2,7 +2,7 @@ import axios from "axios";
 
 const axi = axios.create(
     {
-    baseURL:'http://localhost:5000'
+    baseURL:'https://khana-pina-server-rosy.vercel.app'
 })
 const axiosFile = () => {
     return axi

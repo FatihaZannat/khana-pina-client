@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import UseAuthContext from "./AuthLoad";
 
 const instance = axios.create({
-  baseURL: 'http://localhost:5000'
+  baseURL: 'https://khana-pina-server-rosy.vercel.app'
 });
 
 const Axios = () => {

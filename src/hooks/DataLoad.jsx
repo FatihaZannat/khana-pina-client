@@ -8,7 +8,7 @@ export function MenuData(){
 // const [menuData, setMenuData] = useState([])
 // useEffect(()=>{
 //     // fetch('menu.json')
-//     fetch(`http://localhost:5000/menu`)
+//     fetch(`https://khana-pina-server-rosy.vercel.app/menu`)
 //     .then(res => res.json())
 //     .then(data => {
 //         setMenuData(data)})

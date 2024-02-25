@@ -20,7 +20,7 @@ const AdminHome = () => {
         }
     })
 
-    const { data: stats } = useQuery({
+    const { data: stats = []} = useQuery({
         queryKey: ['order-stats'],
         queryFn: async () => {
             const res = await axios.get('/order-stats')
@@ -44,7 +44,7 @@ const AdminHome = () => {
     };
 
     // pieChart
-    const stat = stats.map(item => {
+    const stat = stats?.map(item => {
         return { name: item.category, value: item.totalRevenue }
     })
 
